@@ -73,7 +73,7 @@ namespace XKCD_Browser.ViewModels
 
         private void getComicAtIndex(int index)
         {
-            if (index >= App.Current.LatestComicNum || index < 0)
+            if (index > App.Current.LatestComicNum || index <= 0)
                 return;
 
             if (isLoading)
@@ -102,6 +102,16 @@ namespace XKCD_Browser.ViewModels
             getComicAtIndex(rnd.Next(App.Current.LatestComicNum));
         }
 
+        public void getLatestComic()
+        {
+            getComicAtIndex(App.Current.LatestComicNum);
+        }
+
+        public void getOldestComic()
+        {
+            getComicAtIndex(1);
+        }
+
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
             _webClient.DownloadStringCompleted -= webClient_DownloadStringCompleted;
@@ -123,7 +133,7 @@ namespace XKCD_Browser.ViewModels
                 var dtf = CultureInfo.CurrentCulture.DateTimeFormat;
                 jsonResult.month = dtf.GetAbbreviatedMonthName(Convert.ToInt32(jsonResult.month));
                 ComicResult = jsonResult;
-                if (_shouldAssignLatest && !(ComicResult.num == null || ComicResult.num == 0))
+                if (_shouldAssignLatest && !(ComicResult.num == 0))
                 {
                     App.Current.LatestComicNum = ComicResult.num;
                     currentComic = ComicResult.num;

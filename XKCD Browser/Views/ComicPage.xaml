@@ -2,6 +2,7 @@
     x:Class="XKCD_Browser.Views.ComicPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:XKCD_Browser.Converter"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -15,6 +16,8 @@
     shell:SystemTray.IsVisible="False">
 
     <phone:PhoneApplicationPage.Resources>
+        <converter:BooleanToVisibilityConverter x:Key="BoolToVis" />
+        
         <Style x:Key="ComicItemHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextNormalStyle}">
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="FontFamily" Value="Segoe WP Black"/>
@@ -44,8 +47,8 @@
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
 			<shell:ApplicationBar.MenuItems>
-				<shell:ApplicationBarMenuItem Text="oldest"/>
-				<shell:ApplicationBarMenuItem Text="latest"/>
+                <shell:ApplicationBarMenuItem Text="oldest" Click="OldestButton_Click"/>
+                <shell:ApplicationBarMenuItem Text="latest" Click="LatestButton_Click"/>
 			</shell:ApplicationBar.MenuItems>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.back.rest.png" Text="previous" Click="PreviousButton_Click"/>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.refresh.rest.png" Text="random" Click="RandomButton_Click"/>
@@ -54,9 +57,10 @@
 	</phone:PhoneApplicationPage.ApplicationBar>
     
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding ComicResult}" Tap="LayoutRoot_Tap">
+    <Grid x:Name="LayoutRoot" Background="Transparent"  Tap="LayoutRoot_Tap">
+        <ProgressBar HorizontalAlignment="Stretch" Foreground="{StaticResource PhoneForegroundBrush}" VerticalAlignment="Center" IsIndeterminate="True" Visibility="{Binding isLoading, Converter={StaticResource BoolToVis}}"/>
 
-        <Image x:Name="ComicImage" Opacity="0.4" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" CacheMode="BitmapCache">
+        <Image DataContext="{Binding ComicResult}" x:Name="ComicImage" Opacity="0.4" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" CacheMode="BitmapCache">
             <Image.RenderTransform>
                 <CompositeTransform x:Name="ImageTransformation" ScaleX="1" ScaleY="1" />
             </Image.RenderTransform>
@@ -68,7 +72,7 @@
             </Image.Source>
         </Image>
 
-        <Grid x:Name="TextGrid" Margin="12,17,0,0" Opacity="1">
+        <Grid x:Name="TextGrid" Margin="12,17,0,0" Opacity="1" DataContext="{Binding ComicResult}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

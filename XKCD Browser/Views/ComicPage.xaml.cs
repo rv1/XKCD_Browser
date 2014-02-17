@@ -60,6 +60,16 @@ namespace XKCD_Browser.Views
             (this.DataContext as MainPageViewModel).getNextComic();
         }
 
+        private void LatestButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).getLatestComic();
+        }
+
+        private void OldestButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).getOldestComic();
+        }
+
 
         //source for pinch zoom http://codecopy.wordpress.com/2011/12/15/wp7-pinch-and-pan-zoom-an-image/
         private Point Center;
