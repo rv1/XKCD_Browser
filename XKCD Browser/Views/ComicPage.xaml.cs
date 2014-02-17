@@ -36,11 +36,13 @@ namespace XKCD_Browser.Views
         {
             if (ComicImage.Opacity != 1)
             {
+                ComicImage.IsHitTestVisible = true;
                 TextGrid.Opacity = 0;
                 ComicImage.Opacity = 1;
             }
             else
             {
+                ComicImage.IsHitTestVisible = false;
                 TextGrid.Opacity = 1;
                 ComicImage.Opacity = 0.4;
             }
