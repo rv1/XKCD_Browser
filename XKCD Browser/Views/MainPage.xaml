@@ -88,7 +88,7 @@
                         </StackPanel>
                     </Grid>
                     <TextBlock Style="{StaticResource BlockHeaderTextStyle}" Text="alt:" />
-                    <TextBlock Style="{StaticResource BlockDetailTextStyle}" Text="{Binding alt}" />
+                    <TextBlock Style="{StaticResource BlockDetailTextStyle}" TextWrapping="Wrap" Text="{Binding alt}" />
                 </StackPanel>
             </controls:PivotItem>
         </controls:Pivot>

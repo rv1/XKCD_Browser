@@ -33,7 +33,7 @@ namespace XKCD_Browser.Views
 
         private void LayoutRoot_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (ComicImage.Opacity == 0.5)
+            if (ComicImage.Opacity != 1)
             {
                 TextGrid.Opacity = 0;
                 ComicImage.Opacity = 1;
@@ -41,8 +41,45 @@ namespace XKCD_Browser.Views
             else
             {
                 TextGrid.Opacity = 1;
-                ComicImage.Opacity = 0.5;
+                ComicImage.Opacity = 0.4;
             }
         }
+
+        private void PreviousButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).getPreviousComic();
+        }
+
+        private void RandomButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).getRandomComic();
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).getNextComic();
+        }
+
+        /*
+         *         private void PreviousButton_Click(object sender, EventArgs e)
+        {
+            MainPageViewModel mainPageViewModel = this.DataContext as MainPageViewModel;
+            mainPageViewModel.getPreviousComic();
+            this.DataContext = mainPageViewModel;
+        }
+
+        private void RandomButton_Click(object sender, EventArgs e)
+        {
+            MainPageViewModel mainPageViewModel = this.DataContext as MainPageViewModel;
+            mainPageViewModel.getRandomComic();
+            this.DataContext = mainPageViewModel;
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            MainPageViewModel mainPageViewModel = this.DataContext as MainPageViewModel;
+            mainPageViewModel.getNextComic();
+            this.DataContext = mainPageViewModel;
+        }*/
     }
 }

@@ -14,7 +14,25 @@
     shell:SystemTray.IsVisible="False">
 
     <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="ComicItemHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextNormalStyle}">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="FontFamily" Value="Segoe WP Black"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
 
+        <Style x:Key="ComicItemSubHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextSubtleStyle}">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="FontFamily" Value="Segoe WP Black"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="BlockHeaderTextStyle">
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="FontFamily" Value="Segoe WP Black"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
         <Style TargetType="TextBlock" x:Key="BlockDetailTextStyle">
             <Setter Property="Margin" Value="0,10"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
@@ -22,30 +40,65 @@
         </Style>
 
     </phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem Text="oldest"/>
+				<shell:ApplicationBarMenuItem Text="latest"/>
+			</shell:ApplicationBar.MenuItems>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.back.rest.png" Text="previous" Click="PreviousButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.refresh.rest.png" Text="random" Click="RandomButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.next.rest.png" Text="next" Click="NextButton_Click"/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
     
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding ComicResult}" Tap="LayoutRoot_Tap">
 
-        <Image x:Name="ComicImage" Opacity="0.5" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Image x:Name="ComicImage" Opacity="0.4" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image.Source>
                 <BitmapImage UriSource="{Binding img}" CreateOptions="DelayCreation,BackgroundCreation" />
             </Image.Source>
         </Image>
 
-        <Grid x:Name="TextGrid" Margin="12,17,0,28" Opacity="1">
+        <Grid x:Name="TextGrid" Margin="12,17,0,0" Opacity="1">
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
                 <TextBlock Text="XKCD Browser" Style="{StaticResource PhoneTextNormalStyle}"/>
                 <TextBlock Text="{Binding title}" TextWrapping="Wrap" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+
+                <TextBlock Style="{StaticResource ComicItemSubHeaderStyle}">
+                                <Run Text="{Binding month}" />
+                                <Run Text=" "/>
+                                <Run Text="{Binding day}"/>
+                                <Run Text=", "/>
+                                <Run Text="{Binding year}"/>
+                </TextBlock>
+                <TextBlock Style="{StaticResource ComicItemSubHeaderStyle}">
+                                <Run Text="num# - " />
+                                <Run Text="{Binding num}"/>
+                </TextBlock>
+
+
             </StackPanel>
 
 
 
             <!--<TextBlock Margin="9,-7,0,0" Text="{Binding title}" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Top"/>-->
 
-            <ScrollViewer Margin="12,0,12,0" Height="200" VerticalScrollBarVisibility="Auto" VerticalAlignment="Bottom">
+            <ScrollViewer Grid.Row="1" Margin="12,0,12,0" MaxHeight="200" VerticalScrollBarVisibility="Auto" VerticalAlignment="Bottom">
 
-                <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap" Height="Auto" Style="{StaticResource BlockDetailTextStyle}" Text="{Binding alt}"/>
+                <StackPanel VerticalAlignment="Bottom" Height="Auto">
+                    <TextBlock Style="{StaticResource BlockHeaderTextStyle}" Text="alt:" />
+                    <TextBlock TextWrapping="Wrap"  Style="{StaticResource BlockDetailTextStyle}" Text="{Binding alt}"/>
+
+                    <TextBlock Style="{StaticResource BlockHeaderTextStyle}" Text="transcript:" />
+                    <TextBlock TextWrapping="Wrap"  Style="{StaticResource BlockDetailTextStyle}" Text="{Binding transcript}"/>
+                </StackPanel>
             </ScrollViewer>
         </Grid>
         

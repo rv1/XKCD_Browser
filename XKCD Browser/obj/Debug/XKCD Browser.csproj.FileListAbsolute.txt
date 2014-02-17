@@ -39,3 +39,8 @@ C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\zh-TW\Micros
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Newtonsoft.Json.dll
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Newtonsoft.Json.xml
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\Views\ComicPage.g.cs
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.back.rest.png
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.next.rest.png
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.refresh.rest.png
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.transport.ff.rest.png
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.transport.rew.rest.png
