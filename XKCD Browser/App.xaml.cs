@@ -17,6 +17,17 @@ namespace XKCD_Browser
 {
     public partial class App : Application
     {
+
+        // Globals
+
+        public int LatestComicNum;
+        public string LatestComicAPI = "http://xkcd.com/info.0.json";
+
+        public static new App Current
+        {
+            get { return Application.Current as App; }
+        }
+
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>

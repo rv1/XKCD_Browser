@@ -8,8 +8,34 @@ C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Microsoft.Ph
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Microsoft.Phone.Controls.xml
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\XKCD Browser.csprojResolveAssemblyReference.cache
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\App.g.cs
-C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\MainPage.g.cs
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\XKCD Browser.g.resources
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\XKCD Browser.dll
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\XKCD Browser.pdb
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\XapCacheFile.xml
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\Views\MainPage.g.cs
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\cs-CZ\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\da-DK\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\de-DE\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\el-GR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\en-GB\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\es-ES\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\fi-FI\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\fr-FR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\hu-HU\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\id-ID\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\it-IT\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\ja-JP\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\ko-KR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\ms-MY\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\nb-NO\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\nl-NL\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\pl-PL\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\pt-BR\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\ru-RU\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\sv-SE\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Newtonsoft.Json.dll
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Newtonsoft.Json.xml
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\obj\Debug\Views\ComicPage.g.cs
