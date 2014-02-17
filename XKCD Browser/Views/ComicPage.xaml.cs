@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using XKCD_Browser.ViewModels;
+using Microsoft.Phone.Tasks;
 
 namespace XKCD_Browser.Views
 {
@@ -70,6 +71,11 @@ namespace XKCD_Browser.Views
             (this.DataContext as MainPageViewModel).getOldestComic();
         }
 
+        private void RateButton_Click(object sender, EventArgs e)
+        {
+            MarketplaceReviewTask oRateTask = new MarketplaceReviewTask();
+            oRateTask.Show();
+        }
 
         //source for pinch zoom http://codecopy.wordpress.com/2011/12/15/wp7-pinch-and-pan-zoom-an-image/
         private Point Center;

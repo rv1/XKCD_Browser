@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
 using System;
 using System.Windows.Input;
 using System.Windows.Navigation;
@@ -30,5 +31,17 @@ namespace XKCD_Browser
         {
             NavigationService.Navigate(new Uri("/Views/ComicPage.xaml", UriKind.Relative));
         }
+
+        private void RateButton_Click(object sender, EventArgs e)
+        {
+            MarketplaceReviewTask oRateTask = new MarketplaceReviewTask();
+            oRateTask.Show();
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).GetLatestComic();
+        }
+
     }
 }
