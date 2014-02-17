@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -55,7 +56,13 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding ComicResult}" Tap="LayoutRoot_Tap">
 
-        <Image x:Name="ComicImage" Opacity="0.4" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Image x:Name="ComicImage" Opacity="0.4" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" CacheMode="BitmapCache">
+            <Image.RenderTransform>
+                <CompositeTransform x:Name="ImageTransformation" ScaleX="1" ScaleY="1" />
+            </Image.RenderTransform>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener PinchStarted="GestureListener_PinchStarted" PinchDelta="OnPinchDelta" DragDelta="Image_DragDelta" />
+            </toolkit:GestureService.GestureListener>
             <Image.Source>
                 <BitmapImage UriSource="{Binding img}" CreateOptions="DelayCreation,BackgroundCreation" />
             </Image.Source>
