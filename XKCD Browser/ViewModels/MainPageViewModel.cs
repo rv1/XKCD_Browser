@@ -1,9 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Coding4Fun.Toolkit.Controls;
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Net;
 using System.Windows;
+using System.Windows.Input;
 using XKCD_Browser.Models;
 
 namespace XKCD_Browser.ViewModels
@@ -71,13 +73,13 @@ namespace XKCD_Browser.ViewModels
             _webClient.DownloadStringAsync(new Uri(webAddr));
         }
 
-        private void getComicAtIndex(int index)
+        private bool getComicAtIndex(int index)
         {
             if (index > App.Current.LatestComicNum || index <= 0)
-                return;
+                return false;
 
             if (isLoading)
-                return;
+                return false;
 
             _shouldAssignLatest = false;
             isLoading = true;
@@ -85,6 +87,7 @@ namespace XKCD_Browser.ViewModels
             string webAddr = "http://xkcd.com/" + (currentComic).ToString() + "/info.0.json";
             _webClient.DownloadStringCompleted += webClient_DownloadStringCompleted;
             _webClient.DownloadStringAsync(new Uri(webAddr));
+            return true;
         }
 
         public void getPreviousComic()
@@ -110,6 +113,37 @@ namespace XKCD_Browser.ViewModels
         public void getOldestComic()
         {
             getComicAtIndex(1);
+        }
+
+        public void getNumberedComic()
+        {
+            InputPrompt input = new InputPrompt();
+            input.Title = "Enter Comic Number";
+            input.Message = "Range: 0 to " + App.Current.LatestComicNum;
+            input.BorderThickness = new Thickness(1);
+            input.IsCancelVisible = true;
+            input.Completed += input_Completed;
+            input.InputScope = new InputScope { Names = { new InputScopeName() { NameValue = InputScopeNameValue.Number} } };
+            input.Show();
+
+            //getComicAtIndex(66);
+
+        }
+
+        private void input_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            if (e.PopUpResult.ToString() == "Ok")
+            {
+                if (!string.IsNullOrWhiteSpace(e.Result))
+                {
+                    if (!getComicAtIndex(Convert.ToInt32(e.Result)))
+                    {
+                        MessageBox.Show("I wish I could go and fetch that comic, but seems like it does not exist.\nNice try though.", "Error", MessageBoxButton.OK);
+                    }
+                }
+            }
+
+            //getComicAtIndex(66);
         }
 
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using XKCD_Browser.ViewModels;
+﻿using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
+using System;
+using System.Windows.Navigation;
+using XKCD_Browser.ViewModels;
 
 namespace XKCD_Browser.Views
 {
@@ -73,6 +67,11 @@ namespace XKCD_Browser.Views
             (this.DataContext as MainPageViewModel).getOldestComic();
         }
 
+        private void gotoButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).getNumberedComic();
+        }
+
         private void RateButton_Click(object sender, EventArgs e)
         {
             MarketplaceReviewTask oRateTask = new MarketplaceReviewTask();
@@ -80,7 +79,7 @@ namespace XKCD_Browser.Views
         }
 
         //source for pinch zoom http://codecopy.wordpress.com/2011/12/15/wp7-pinch-and-pan-zoom-an-image/
-        private Point Center;
+        private System.Windows.Point Center;
         private double InitialScale;
 
         private void GestureListener_PinchStarted(object sender, PinchStartedGestureEventArgs e)
@@ -88,10 +87,10 @@ namespace XKCD_Browser.Views
             // Store the initial rotation angle and scaling
             InitialScale = ImageTransformation.ScaleX;
             // Calculate the center for the zooming
-            Point firstTouch = e.GetPosition(ComicImage, 0);
-            Point secondTouch = e.GetPosition(ComicImage, 1);
+            System.Windows.Point firstTouch = e.GetPosition(ComicImage, 0);
+            System.Windows.Point secondTouch = e.GetPosition(ComicImage, 1);
 
-            Center = new Point(firstTouch.X + (secondTouch.X - firstTouch.X) / 2.0, firstTouch.Y + (secondTouch.Y - firstTouch.Y) / 2.0);
+            Center = new System.Windows.Point(firstTouch.X + (secondTouch.X - firstTouch.X) / 2.0, firstTouch.Y + (secondTouch.Y - firstTouch.Y) / 2.0);
         }
 
         private void OnPinchDelta(object sender, PinchGestureEventArgs e)

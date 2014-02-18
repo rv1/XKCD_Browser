@@ -49,6 +49,7 @@
 			<shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="oldest" Click="OldestButton_Click"/>
                 <shell:ApplicationBarMenuItem Text="latest" Click="LatestButton_Click"/>
+                <shell:ApplicationBarMenuItem Text="goto comic#" Click="gotoButton_Click"/>
                 <shell:ApplicationBarMenuItem Text="Rate App" Click="RateButton_Click"/>
 			</shell:ApplicationBar.MenuItems>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.back.rest.png" Text="previous" Click="PreviousButton_Click"/>
