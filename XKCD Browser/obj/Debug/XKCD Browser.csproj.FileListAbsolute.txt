@@ -44,3 +44,4 @@ C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBa
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.refresh.rest.png
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.transport.ff.rest.png
 C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Assets\AppBar\appbar.transport.rew.rest.png
+C:\Users\Rahul\Documents\GitHub\XKCD_Browser\XKCD Browser\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
