@@ -151,5 +151,21 @@ namespace XKCD_Browser.Views
 
             return;
         }
+
+        //private void GestureListener_Flick(object sender, FlickGestureEventArgs e)
+        //{
+        //    var vm = DataContext as MainPageViewModel;
+        //    if (vm != null)
+        //    {
+        //        if (e.HorizontalVelocity < 0)
+        //        {
+        //            (this.DataContext as MainPageViewModel).getNextComic();
+        //        }
+        //        else if (e.HorizontalVelocity > 0)
+        //        {
+        //            (this.DataContext as MainPageViewModel).getPreviousComic();
+        //        }
+        //    }
+        //}
     }
 }
