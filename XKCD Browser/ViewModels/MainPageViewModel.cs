@@ -125,9 +125,6 @@ namespace XKCD_Browser.ViewModels
             input.Completed += input_Completed;
             input.InputScope = new InputScope { Names = { new InputScopeName() { NameValue = InputScopeNameValue.Number} } };
             input.Show();
-
-            //getComicAtIndex(66);
-
         }
 
         private void input_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
@@ -138,12 +135,10 @@ namespace XKCD_Browser.ViewModels
                 {
                     if (!getComicAtIndex(Convert.ToInt32(e.Result)))
                     {
-                        MessageBox.Show("I wish I could go and fetch that comic, but seems like it does not exist.\nNice try though.", "Error", MessageBoxButton.OK);
+                        MessageBox.Show("Comic does not exist.\nPlease Try again.", "Error", MessageBoxButton.OK);
                     }
                 }
             }
-
-            //getComicAtIndex(66);
         }
 
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
