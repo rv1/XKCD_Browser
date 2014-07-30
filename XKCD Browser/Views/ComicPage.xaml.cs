@@ -11,6 +11,37 @@ namespace XKCD_Browser.Views
         public ComicPage()
         {
             InitializeComponent();
+            Loaded += ComicPage_Loaded;
+            Unloaded += ComicPage_Unloaded;
+        }
+
+        void ComicPage_Unloaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (_vm == null)
+                return;
+
+            _vm.PropertyChanged -= _vm_PropertyChanged;
+        }
+
+        private MainPageViewModel _vm;
+
+        void ComicPage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _vm = DataContext as MainPageViewModel;
+            if(_vm == null)
+                return;
+
+            _vm.PropertyChanged += _vm_PropertyChanged;
+        }
+
+        void _vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "ComicResult")
+            {
+                ResetImageTransformation();
+                ImageTransformation.ScaleX = 1;
+                ImageTransformation.ScaleY = 1;
+            }
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -55,6 +86,11 @@ namespace XKCD_Browser.Views
         private void NextButton_Click(object sender, EventArgs e)
         {
             (this.DataContext as MainPageViewModel).getNextComic();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            (this.DataContext as MainPageViewModel).saveCurrentComic();
         }
 
         private void LatestButton_Click(object sender, EventArgs e)
@@ -102,10 +138,7 @@ namespace XKCD_Browser.Views
             // If its original size then center it back
             if (e.DistanceRatio <= 1.08)
             {
-                ImageTransformation.CenterY = 0;
-                ImageTransformation.CenterY = 0;
-                ImageTransformation.TranslateX = 0;
-                ImageTransformation.TranslateY = 0;
+                ResetImageTransformation();
             }
 
             ImageTransformation.CenterX = Center.X;
@@ -122,6 +155,14 @@ namespace XKCD_Browser.Views
                 ImageTransformation.ScaleX = InitialScale * e.DistanceRatio;
             }
             ImageTransformation.ScaleY = ImageTransformation.ScaleX;
+        }
+
+        private void ResetImageTransformation()
+        {
+            ImageTransformation.CenterY = 0;
+            ImageTransformation.CenterY = 0;
+            ImageTransformation.TranslateX = 0;
+            ImageTransformation.TranslateY = 0;
         }
 
         private void Image_DragDelta(object sender, DragDeltaGestureEventArgs e)

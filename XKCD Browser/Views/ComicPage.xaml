@@ -60,9 +60,6 @@
     
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent"  Tap="LayoutRoot_Tap">
-        <!--<toolkit:GestureService.GestureListener>
-            <toolkit:GestureListener Flick="GestureListener_Flick"/>
-        </toolkit:GestureService.GestureListener>-->
         <ProgressBar HorizontalAlignment="Stretch" Foreground="{StaticResource PhoneForegroundBrush}" VerticalAlignment="Center" IsIndeterminate="True" Visibility="{Binding isLoading, Converter={StaticResource BoolToVis}}"/>
 
         <Image DataContext="{Binding ComicResult}" x:Name="ComicImage" Opacity="0.4" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" CacheMode="BitmapCache">
