@@ -7,6 +7,7 @@ namespace XKCD_Browser.Models
 {
     public class ComicItem
     {
+        public DateTime date { get; set; }
         public string month { get; set; }
         public int num { get; set; }
         public string link { get; set; }
