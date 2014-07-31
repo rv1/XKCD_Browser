@@ -19,10 +19,7 @@ namespace XKCD_Browser.ViewModels
 
         public bool isLoading
         {
-            get
-            {
-                return _isLoading;
-            }
+            get { return _isLoading; }
             set
             {
                 _isLoading = value;
@@ -48,10 +45,7 @@ namespace XKCD_Browser.ViewModels
 
         public ComicItem ComicResult
         {
-            get
-            {
-                return result;
-            }
+            get { return result; }
             set
             {
                 result = value;

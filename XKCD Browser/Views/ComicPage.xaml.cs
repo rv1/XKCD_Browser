@@ -88,10 +88,10 @@ namespace XKCD_Browser.Views
             (this.DataContext as MainPageViewModel).getNextComic();
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            (this.DataContext as MainPageViewModel).saveCurrentComic();
-        }
+        //private void SaveButton_Click(object sender, EventArgs e)
+        //{
+        //    (this.DataContext as MainPageViewModel).saveCurrentComic();
+        //}
 
         private void LatestButton_Click(object sender, EventArgs e)
         {
