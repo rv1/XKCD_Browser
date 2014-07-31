@@ -129,7 +129,7 @@ namespace XKCD_Browser.ViewModels
             if (string.IsNullOrWhiteSpace(e.Result)) return;
             if (!getComicAtIndex(Convert.ToInt32(e.Result)))
             {
-                MessageBox.Show("Comic does not exist.\nPlease Try again.", "Error", MessageBoxButton.OK);
+                MessageBox.Show("Comic does not exist.\n\nPlease Try again.", "Error", MessageBoxButton.OK);
             }
         }
 
@@ -139,7 +139,7 @@ namespace XKCD_Browser.ViewModels
             
             if (e == null || e.Cancelled || e.Error != null)
             {
-                MessageBox.Show("Something went wrong with the network connection.\nPlease Try Again", "Error", MessageBoxButton.OK);
+                MessageBox.Show("Something went wrong with the network connection.\n\nPlease try again", "Error", MessageBoxButton.OK);
                 isLoading = false;
                 _shouldAssignLatest = false;
                 return;
@@ -161,7 +161,7 @@ namespace XKCD_Browser.ViewModels
             }
             else
             {
-                MessageBox.Show("Seems like the the servers are not responding as expected.\n:(\nI would be sad too.", "Error", MessageBoxButton.OK);
+                MessageBox.Show("Seems like the the servers are not responding as expected.\n\nPlease try again later.", "Error", MessageBoxButton.OK);
             }
             isLoading = false;
             _shouldAssignLatest = false;
