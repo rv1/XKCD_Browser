@@ -106,7 +106,7 @@
 
             <!--<TextBlock Margin="9,-7,0,0" Text="{Binding title}" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Top"/>-->
 
-            <ScrollViewer Grid.Row="1" Margin="12,0,12,0" MaxHeight="200" VerticalScrollBarVisibility="Auto" VerticalAlignment="Bottom">
+            <ScrollViewer x:Name="ScrollViewer" Grid.Row="1" Margin="12,0,12,0" MaxHeight="200" VerticalScrollBarVisibility="Auto" VerticalAlignment="Bottom">
 
                 <StackPanel VerticalAlignment="Bottom" Height="Auto">
                     <TextBlock Style="{StaticResource BlockHeaderTextStyle}" Text="alt:" />

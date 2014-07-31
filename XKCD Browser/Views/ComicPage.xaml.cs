@@ -41,6 +41,7 @@ namespace XKCD_Browser.Views
                 ResetImageTransformation();
                 ImageTransformation.ScaleX = 1;
                 ImageTransformation.ScaleY = 1;
+                ScrollViewer.ScrollToVerticalOffset(0);
             }
         }
 
