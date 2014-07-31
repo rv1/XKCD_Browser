@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{3ef90189-2661-4ddf-8124-1d726e7e198c}" Title="XKCD_Browser" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="XKCD_Browser author" Description="Sample description" Publisher="XKCD_Browser">
+  <App xmlns="" ProductID="{3ef90189-2661-4ddf-8124-1d726e7e198c}" Title="XKCD Browser" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Rahul Verma" Description="Simple Browser for XKCD." Publisher="Coffee Monster">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_IDENTITY_USER" />
