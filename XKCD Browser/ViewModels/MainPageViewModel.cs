@@ -117,11 +117,13 @@ namespace XKCD_Browser.ViewModels
 
         public void getNumberedComic()
         {
-            InputPrompt input = new InputPrompt();
-            input.Title = "Enter Comic Number";
-            input.Message = "Range: 0 to " + App.Current.LatestComicNum;
-            input.BorderThickness = new Thickness(1);
-            input.IsCancelVisible = true;
+            var input = new InputPrompt
+            {
+                Title = "Enter Comic Number",
+                Message = "Range: 0 to " + App.Current.LatestComicNum,
+                BorderThickness = new Thickness(1),
+                IsCancelVisible = true
+            };
             input.Completed += input_Completed;
             input.InputScope = new InputScope { Names = { new InputScopeName() { NameValue = InputScopeNameValue.Number} } };
             input.Show();
@@ -129,15 +131,11 @@ namespace XKCD_Browser.ViewModels
 
         private void input_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
         {
-            if (e.PopUpResult.ToString() == "Ok")
+            if (e.PopUpResult.ToString() != "Ok") return;
+            if (string.IsNullOrWhiteSpace(e.Result)) return;
+            if (!getComicAtIndex(Convert.ToInt32(e.Result)))
             {
-                if (!string.IsNullOrWhiteSpace(e.Result))
-                {
-                    if (!getComicAtIndex(Convert.ToInt32(e.Result)))
-                    {
-                        MessageBox.Show("Comic does not exist.\nPlease Try again.", "Error", MessageBoxButton.OK);
-                    }
-                }
+                MessageBox.Show("Comic does not exist.\nPlease Try again.", "Error", MessageBoxButton.OK);
             }
         }
 
@@ -147,7 +145,7 @@ namespace XKCD_Browser.ViewModels
             
             if (e == null || e.Cancelled || e.Error != null)
             {
-                MessageBox.Show("Seems like the internet connection is down or the website refused the request.\n:(\nWe are sad too that you couldnt continue.", "Error", MessageBoxButton.OK);
+                MessageBox.Show("Something went wrong with the network connection.\nPlease Try Again", "Error", MessageBoxButton.OK);
                 isLoading = false;
                 _shouldAssignLatest = false;
                 return;
@@ -155,14 +153,13 @@ namespace XKCD_Browser.ViewModels
             string json = e.Result;
             if (!string.IsNullOrEmpty(json))
             {
-                ComicItem jsonResult = JsonConvert.DeserializeObject<ComicItem>(json);
-                //ComicResult = JsonConvert.DeserializeObject<ComicItem>(json);
+                var jsonResult = JsonConvert.DeserializeObject<ComicItem>(json);
 
                 //Converting date format
                 var dtf = CultureInfo.CurrentCulture.DateTimeFormat;
                 jsonResult.month = dtf.GetAbbreviatedMonthName(Convert.ToInt32(jsonResult.month));
                 ComicResult = jsonResult;
-                if (_shouldAssignLatest && !(ComicResult.num == 0))
+                if (_shouldAssignLatest && ComicResult.num != 0)
                 {
                     App.Current.LatestComicNum = ComicResult.num;
                     currentComic = ComicResult.num;
