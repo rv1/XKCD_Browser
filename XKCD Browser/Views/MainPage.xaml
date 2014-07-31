@@ -57,7 +57,7 @@
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Tap="AllComics_Tap">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -72,7 +72,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Margin="12,0,12,15" Orientation="Vertical">
-                <Grid  toolkit:TiltEffect.IsTiltEnabled="True" Tap="AllComics_Tap" DataContext="{Binding ComicResult}">
+                <Grid  toolkit:TiltEffect.IsTiltEnabled="True" DataContext="{Binding ComicResult}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
                         <ColumnDefinition Width="*"/>
