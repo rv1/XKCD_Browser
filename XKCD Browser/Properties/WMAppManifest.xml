@@ -14,7 +14,7 @@
         <TemplateType5>
           <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>XKCD_Browser</Title>
+          <Title>XKCD</Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>

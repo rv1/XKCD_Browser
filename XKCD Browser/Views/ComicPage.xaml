@@ -53,7 +53,7 @@
                 <shell:ApplicationBarMenuItem Text="Rate App" Click="RateButton_Click"/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.back.rest.png" Text="previous" Click="PreviousButton_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.refresh.rest.png" Text="random" Click="RandomButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.shuffle.png" Text="random" Click="RandomButton_Click"/>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.next.rest.png" Text="next" Click="NextButton_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
